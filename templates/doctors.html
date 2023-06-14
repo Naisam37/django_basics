@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOCTORS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 18rem;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <h1>DOCTORS PAGE</h1>
+    <hr>
+
+    <div class="container text-center">
+        {% for d in doctors %}
+        <div class="card text-center my-5">
+            <img src="{{ d.doc_image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Dr. {{ d.doc_name }}</h5>
+                <p class="card-text">{{ d.doc_spec }}</p>
+                <h6>{{ d.dep_name }} Department</h6>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+    <script src="" async defer></script>
+</body>
+</html>

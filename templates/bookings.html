@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+        {% block content%}
+
+      <h1 class="text-center">Make An Appointment</h1>
+      <hr>
+    <div class="container w-50 text-center  my-5 bg-info">
+      <form method="POST">         <!-- #post method use akukayanenkil csrf token kodkanam to prevent malicious attacks -->
+
+        {% csrf_token %}
+            {{form.as_p}} 
+
+        <button class="btn btn-primary" type="submit" >Submit</button>
+      </form>
+</div>
+{%endblock%}      

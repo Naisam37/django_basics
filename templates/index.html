@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HOME</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        {% extends 'base.html' %}
+
+  {%block content %}  
+         <h1>HOME PAGE</h1>
+        <h2>Name is {{name}}</h2>
+        <h2>Qualification {{qualification}}</h2>        
+        <h2>Age is {{age}}</h2>
+        <h2>Place {{place}}</h2>
+
+        {% if num1 > 0  %}
+            <h2>number is {{num1}} </h2>
+        {% endif %}
+        
+        {% if num2 > 0 %}
+            <h2>number is {{num2}}, {{num3}}, {{num4}} , {{num5}} , {{num6}}, </h2>
+        {% else %}
+             <h2>number is  </h2>
+        {% endif %}
+
+        {% for n in nums  %}
+               <h2>{{n}}</h2>
+        {% endfor %}
+        
+        {% for f in fruits  %}
+            <h2>{{f}}</h2>
+        {% endfor %} 
+        
+       {%endblock%}  
+
+        <script src="" async defer></script>
+    </body>
+</html>
